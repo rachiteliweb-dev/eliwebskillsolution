@@ -1,0 +1,95 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
+}
+
+enum EnrollmentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum PaymentStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+model User {
+  id               String       @id @default(uuid())
+  name             String
+  email            String       @unique
+  password         String
+  role             Role
+  createdAt        DateTime     @default(now())
+  courses          Course[]     @relation("TeacherCourses")
+  enrollments      Enrollment[] @relation("StudentEnrollments")
+  verifiedPayments Payment[]    @relation("Verifier")
+}
+
+model Course {
+  id           String        @id @default(uuid())
+  title        String
+  description  String
+  price        Int           // in cents / smallest currency unit
+  thumbnailUrl String
+  teacherId    String
+  teacher      User          @relation("TeacherCourses", fields: [teacherId], references: [id])
+  isPublished  Boolean       @default(false)
+  createdAt    DateTime      @default(now())
+  videos       CourseVideo[]
+  enrollments  Enrollment[]
+}
+
+model CourseVideo {
+  id        String   @id @default(uuid())
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title     String
+  videoUrl  String
+  order     Int
+  isPreview Boolean  @default(false)
+}
+
+model Enrollment {
+  id        String           @id @default(uuid())
+  studentId String
+  student   User             @relation("StudentEnrollments", fields: [studentId], references: [id])
+  courseId  String
+  course    Course           @relation(fields: [courseId], references: [id])
+  status    EnrollmentStatus @default(PENDING)
+  createdAt DateTime         @default(now())
+  payments  Payment[]
+
+  @@unique([studentId, courseId])
+}
+
+model Payment {
+  id             String        @id @default(uuid())
+  enrollmentId   String
+  enrollment     Enrollment    @relation(fields: [enrollmentId], references: [id])
+  screenshotUrl  String
+  transactionRef String
+  amount         Int
+  status         PaymentStatus @default(PENDING)
+  verifiedById   String?
+  verifiedBy     User?         @relation("Verifier", fields: [verifiedById], references: [id])
+  createdAt      DateTime      @default(now())
+}
+
+model PaymentSettings {
+  id             String @id @default("singleton")
+  qrCodeImageUrl String
+  upiId          String
+  instructions   String
+}
