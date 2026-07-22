@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 // Removed Prisma client type import to avoid build-time cache synchronization issues
 type SiteContactPage = any;
+import { toast } from "react-toastify";
 
 const inputCls  = "w-full px-3.5 py-2.5 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 focus:border-[var(--primary)]";
 const labelCls  = "text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]";
@@ -66,7 +67,14 @@ export default function ContactPageForm({ contactPage }: { contactPage: SiteCont
       workingHours, workingHoursTime, address, mapEmbedUrl, successMessage,
       mapSectionTitle, mapSectionDesc,
     });
-    if (res.error) { setError(res.error); } else { setSuccess(true); router.refresh(); }
+    if (res.error) {
+      setError(res.error);
+      toast.error(`Failed to save: ${res.error}`);
+    } else {
+      setSuccess(true);
+      toast.success("Contact page saved successfully!");
+      router.refresh();
+    }
     setLoading(false);
   };
 

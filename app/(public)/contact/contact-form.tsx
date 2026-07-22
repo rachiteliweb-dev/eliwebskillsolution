@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { submitContactForm } from "@/lib/actions/contact";
+import { toast } from "react-toastify";
 import {
   Mail, Phone, Clock, MapPin, Send, CheckCircle2, AlertCircle
 } from "lucide-react";
@@ -29,15 +30,22 @@ export default function ContactForm({ info }: { info: ContactInfo }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !message) { setStatus("error"); setErrorMsg("Please fill out all required fields (Name, Email, and Message)."); return; }
+    if (!name || !email || !message) {
+      setStatus("error");
+      setErrorMsg("Please fill out all required fields (Name, Email, and Message).");
+      toast.warning("Please fill out all required fields!");
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
     const result = await submitContactForm({ name, email, phone, subject, message, track });
     if (result.error) {
       setStatus("error");
       setErrorMsg(result.error);
+      toast.error(`Failed to send message: ${result.error}`);
     } else {
       setStatus("success");
+      toast.success("Message sent successfully!");
       setName(""); setEmail(""); setPhone(""); setSubject(""); setMessage("");
     }
   };

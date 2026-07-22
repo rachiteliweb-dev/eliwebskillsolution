@@ -7,6 +7,7 @@ import { PaymentSettings } from "@prisma/client";
 import { updatePaymentSettings } from "@/lib/actions/admin";
 import { FileUpload } from "@/components/file-upload";
 import { Settings, CreditCard, ArrowLeft, Loader2, Check, AlertCircle } from "lucide-react";
+import { toast } from "react-toastify";
 
 interface SettingsFormProps {
   settings: PaymentSettings | null;
@@ -26,6 +27,7 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
     e.preventDefault();
     if (!qrCodeImageUrl) {
       setError("QR code image is required");
+      toast.warning("QR code image is required!");
       return;
     }
 
@@ -42,14 +44,17 @@ export default function SettingsForm({ settings }: SettingsFormProps) {
       const res = await updatePaymentSettings(formData);
       if (res?.error) {
         setError(res.error);
+        toast.error(`Failed to update settings: ${res.error}`);
         setLoading(false);
       } else {
         setSuccess(true);
+        toast.success("Payment settings updated successfully!");
         setLoading(false);
         router.refresh();
       }
     } catch (err) {
       setError("An unexpected error occurred");
+      toast.error("An unexpected error occurred");
       setLoading(false);
     }
   };

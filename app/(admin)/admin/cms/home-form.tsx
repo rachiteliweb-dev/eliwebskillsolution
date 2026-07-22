@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 // Removed Prisma client type import to avoid build-time cache synchronization issues
 type SiteHomePage = any;
+import { toast } from "react-toastify";
 
 /* ─── Default data ─────────────────────────────────────────────────────────── */
 const DEFAULT_TRACKS = [
@@ -153,7 +154,14 @@ export default function HomeForm({ homePage }: { homePage: SiteHomePage | null }
       faqHeadline, faqs,
       ctaHeadline, ctaSubtext, ctaBtn1Label, ctaBtn2Label,
     });
-    if (res.error) { setError(res.error); } else { setSuccess(true); router.refresh(); }
+    if (res.error) {
+      setError(res.error);
+      toast.error(`Failed to save: ${res.error}`);
+    } else {
+      setSuccess(true);
+      toast.success("Home page saved successfully!");
+      router.refresh();
+    }
     setLoading(false);
   };
 

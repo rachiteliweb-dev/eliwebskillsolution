@@ -9,6 +9,7 @@ import {
 // Removed Prisma client type import to avoid build-time cache synchronization issues
 type ContactSubmissionStatus = "UNREAD" | "READ" | "REPLIED";
 type ContactSubmission = any;
+import { toast } from "react-toastify";
 
 interface Props {
   submissions: ContactSubmission[];
@@ -34,7 +35,10 @@ export default function SubmissionsPanel({ submissions: initialSubmissions }: Pr
       if (selected && selected.id === id) {
         setSelected(prev => prev ? { ...prev, status: newStatus } : null);
       }
+      toast.success(`Submission marked as ${newStatus.toLowerCase()}!`);
       router.refresh();
+    } else {
+      toast.error(`Failed to update status: ${res.error}`);
     }
     setLoadingId(null);
   };
@@ -46,7 +50,10 @@ export default function SubmissionsPanel({ submissions: initialSubmissions }: Pr
     if (!res.error) {
       setSubmissions(prev => prev.filter(s => s.id !== id));
       if (selected && selected.id === id) setSelected(null);
+      toast.success("Submission deleted successfully!");
       router.refresh();
+    } else {
+      toast.error(`Failed to delete submission: ${res.error}`);
     }
     setLoadingId(null);
   };
