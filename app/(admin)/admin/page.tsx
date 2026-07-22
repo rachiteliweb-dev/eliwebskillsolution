@@ -152,7 +152,7 @@ export default async function AdminDashboard() {
                     </p>
                   </div>
                   <span className="text-xs font-bold text-[var(--foreground)] ml-4 shrink-0">
-                    {(item.course.price / 100).toLocaleString("en-US", { style: "currency", currency: "USD" })}
+                    {(item.course.price / 100).toLocaleString("en-IN", { style: "currency", currency: "INR" })}
                   </span>
                 </div>
               ))

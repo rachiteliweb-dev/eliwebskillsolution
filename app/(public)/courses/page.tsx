@@ -61,9 +61,9 @@ export default async function CoursesCatalogPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {courses.map((course) => {
-                const priceFormatted = (course.price / 100).toLocaleString("en-US", {
+                const priceFormatted = (course.price / 100).toLocaleString("en-IN", {
                   style: "currency",
-                  currency: "USD",
+                  currency: "INR",
                 });
                 const videoCount = course.videos.length;
 

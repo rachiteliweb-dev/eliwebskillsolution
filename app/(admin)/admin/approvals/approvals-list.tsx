@@ -82,9 +82,9 @@ export default function ApprovalsList({ initialEnrollments }: ApprovalsListProps
         <div className="grid grid-cols-1 gap-6">
           {initialEnrollments.map((item) => {
             const payment = item.payments[0];
-            const coursePrice = (item.course.price / 100).toLocaleString("en-US", {
+            const coursePrice = (item.course.price / 100).toLocaleString("en-IN", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             });
 
             if (!payment) return null;

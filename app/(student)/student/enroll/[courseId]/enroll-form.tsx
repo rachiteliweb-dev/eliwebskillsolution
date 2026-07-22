@@ -23,9 +23,9 @@ export default function EnrollForm({ course, paymentSettings }: EnrollFormProps)
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const priceFormatted = (course.price / 100).toLocaleString("en-US", {
+  const priceFormatted = (course.price / 100).toLocaleString("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {

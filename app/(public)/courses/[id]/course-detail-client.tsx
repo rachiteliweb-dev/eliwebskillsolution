@@ -20,9 +20,9 @@ export default function CourseDetailClient({ course, session, enrollment }: Cour
   const [activePreviewUrl, setActivePreviewUrl] = useState<string | null>(null);
   const [activePreviewTitle, setActivePreviewTitle] = useState<string | null>(null);
 
-  const priceFormatted = (course.price / 100).toLocaleString("en-US", {
+  const priceFormatted = (course.price / 100).toLocaleString("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
   });
 
   const isGuest = !session;

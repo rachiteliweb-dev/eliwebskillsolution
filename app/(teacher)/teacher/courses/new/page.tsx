@@ -109,10 +109,10 @@ export default function NewCoursePage() {
 
           <div className="space-y-2">
             <label htmlFor="price" className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
-              Price (USD)
+              Price (INR)
             </label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-[var(--muted-foreground)] font-semibold">$</span>
+              <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-[var(--muted-foreground)] font-semibold">₹</span>
               <input
                 id="price"
                 name="price"

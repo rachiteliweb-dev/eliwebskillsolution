@@ -68,9 +68,9 @@ export default async function TeacherDashboard() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => {
-            const formattedPrice = (course.price / 100).toLocaleString("en-US", {
+            const formattedPrice = (course.price / 100).toLocaleString("en-IN", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             });
             const videoCount = course.videos.length;
             const studentCount = course.enrollments.filter(e => e.status === "APPROVED").length;

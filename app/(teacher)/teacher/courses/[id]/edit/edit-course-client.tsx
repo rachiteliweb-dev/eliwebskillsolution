@@ -257,9 +257,9 @@ export default function EditCourseClient({ course }: EditCourseClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Price (USD)</label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Price (INR)</label>
                 <div className="relative">
-                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[var(--muted-foreground)] text-sm font-semibold">$</span>
+                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[var(--muted-foreground)] text-sm font-semibold">₹</span>
                   <input
                     type="number"
                     step="0.01"
