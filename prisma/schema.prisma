@@ -93,3 +93,97 @@ model PaymentSettings {
   upiId          String
   instructions   String
 }
+
+// ─── CMS: Home Page ──────────────────────────────────────────────────────────
+model SiteHomePage {
+  id             String @id @default("singleton")
+  // Hero section
+  heroEyebrow    String @default("Premium Skill Development Platform")
+  heroHeadline1  String @default("Learn Skills.")
+  heroHeadline2  String @default("Build a Career.")
+  heroHeadline3  String @default("Grow Without Limits.")
+  heroSubtext    String @default("Expert-led courses in web development, digital marketing, design & more. Preview free lessons, enroll easily, and learn at your own pace.")
+  heroCta1Label  String @default("Explore Courses")
+  heroCta2Label  String @default("Start for Free")
+  heroSocialProofCount String @default("2,400+")
+  // Skill Tracks section
+  tracksHeadline String @default("Everything You Need to Dominate Online")
+  tracksSubtext  String @default("Discover industry-relevant courses created by experts and designed to help you learn, grow, and achieve more.")
+  features       Json?  // Array of highlight feature objects
+  tracks         Json   // Array of track objects
+  // Why Choose Us section
+  whyHeadline    String @default("Why Students Choose EliWeb Skill Solution")
+  whySubtext     String @default("We're not just another online platform — we're a community built around real skill outcomes.")
+  whyItems       Json   // Array of why-us items
+  // Stats section
+  stats          Json   // Array of {value, label}
+  // How It Works section
+  stepsHeadline  String @default("How It Works")
+  steps          Json   // Array of {number, title, desc}
+  // Testimonials section
+  testimonialsHeadline String @default("What Our Students Say")
+  testimonialsSubtext  String @default("Hear what learners and people who trusted us have to say.")
+  testimonials         Json   // Array of testimonial objects
+  // FAQ section
+  faqHeadline    String @default("Common Questions")
+  faqs           Json   // Array of {q, a}
+  // CTA Banner section
+  ctaHeadline    String @default("Ready to Build Your Dream Career?")
+  ctaSubtext     String @default("Join 2,400+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.")
+  ctaBtn1Label   String @default("Browse All Courses")
+  ctaBtn2Label   String @default("Create Free Account")
+}
+
+// ─── CMS: About Page ─────────────────────────────────────────────────────────
+model SiteAboutPage {
+  id               String @id @default("singleton")
+  heroHeadline     String @default("Empowering Careers Through Applied Learning")
+  heroSubtext      String @default("Eliweb Skill Solution is a premium skill-development platform designed to bridge the gap between traditional education and industry demand.")
+  missionTitle     String @default("Our Mission")
+  missionPara1     String @default("At Eliweb Skill Solution, we believe everyone deserves access to high-quality, practical education that leads directly to professional success.")
+  missionPara2     String @default("Founded with the goal of creating a premium, modern environment for skill development, Eliweb brings expert instructors, dynamic curriculum, and interactive learning environments to students worldwide.")
+  brandName        String @default("Eliweb Skill Solution")
+  foundedYear      String @default("Est. 2024")
+  brandQuote       String @default("We don't teach. We empower. Our students learn to build, ship, and launch their careers with absolute confidence.")
+  stats            Json   // Array of {label, value}
+  valuesHeadline   String @default("Our Core Values")
+  valuesSubtext    String @default("How we work, build, and support our community of learners every single day.")
+  values           Json   // Array of {title, desc}
+}
+
+// ─── CMS: Contact Page ───────────────────────────────────────────────────────
+model SiteContactPage {
+  id              String @id @default("singleton")
+  pageHeading     String @default("Contact Our Support Team")
+  pageSubtext     String @default("Have questions about a course, syllabus, enrollment, or enterprise training? Send us a message and we'll reply shortly.")
+  email           String @default("support@eliweb.in")
+  emailResponseTime String @default("Average response time: < 4 hours")
+  phone           String @default("+91 98765 43210")
+  phoneHours      String @default("Mon–Sat, 9am–6pm IST")
+  workingHours    String @default("Monday – Saturday")
+  workingHoursTime String @default("09:00 AM – 06:00 PM IST")
+  address         String @default("Eliweb Towers, Sector-62\nNoida, Uttar Pradesh 201301\nIndia")
+  mapEmbedUrl     String @default("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.4046777672237!2d77.36200257630282!3d28.617631675673757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce560ff073e51%3A0xe54d8b5840d0246a!2sSector%2062%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1718872500000!5m2!1sen!2sin")
+  successMessage  String @default("Thank you for contacting us. One of our course advisors will reach out to you within the next few hours.")
+  mapSectionTitle String @default("Our Campus Location")
+  mapSectionDesc  String @default("Come visit us at Sector 62 Noida. Our campus is fully equipped for classroom discussions and hands-on laboratory sessions.")
+}
+
+// ─── Contact Form Submissions ─────────────────────────────────────────────────
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  track     String?
+  status    ContactSubmissionStatus @default(UNREAD)
+  createdAt DateTime @default(now())
+}
+
+enum ContactSubmissionStatus {
+  UNREAD
+  READ
+  REPLIED
+}

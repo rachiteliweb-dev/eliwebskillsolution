@@ -109,6 +109,13 @@ export default async function AdminDashboard() {
               <span className="text-xs text-[var(--primary)] group-hover:translate-x-1 transition-transform">Go &rarr;</span>
             </Link>
             <Link
+              href="/admin/cms"
+              className="flex items-center justify-between p-4 bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)] rounded-xl transition-colors group"
+            >
+              <span className="text-sm font-semibold text-[var(--foreground)]">CMS &amp; Page Editor</span>
+              <span className="text-xs text-[var(--primary)] group-hover:translate-x-1 transition-transform">Go &rarr;</span>
+            </Link>
+            <Link
               href="/admin/settings"
               className="flex items-center justify-between p-4 bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)] rounded-xl transition-colors group"
             >

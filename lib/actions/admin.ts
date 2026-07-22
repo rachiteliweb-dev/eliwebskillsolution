@@ -154,3 +154,158 @@ export async function rejectEnrollment(enrollmentId: string, paymentId: string) 
     return { error: error.message || "Failed to reject enrollment" };
   }
 }
+
+// ─── CMS: Home Page ──────────────────────────────────────────────────────────
+
+export async function updateHomePage(data: {
+  heroEyebrow: string;
+  heroHeadline1: string;
+  heroHeadline2: string;
+  heroHeadline3: string;
+  heroSubtext: string;
+  heroCta1Label: string;
+  heroCta2Label: string;
+  heroSocialProofCount: string;
+  tracksHeadline: string;
+  tracksSubtext: string;
+  features: any;
+  tracks: any;
+  whyHeadline: string;
+  whySubtext: string;
+  whyItems: any;
+  stats: any;
+  stepsHeadline: string;
+  steps: any;
+  testimonialsHeadline: string;
+  testimonialsSubtext: string;
+  testimonials: any;
+  faqHeadline: string;
+  faqs: any;
+  ctaHeadline: string;
+  ctaSubtext: string;
+  ctaBtn1Label: string;
+  ctaBtn2Label: string;
+}) {
+  try {
+    console.log("CMS ACTION: updateHomePage entry");
+    const admin = await checkAdmin();
+    console.log("CMS ACTION: Admin authorized:", admin.email);
+    console.log("CMS ACTION: Saving tracks count:", data.tracks?.length, "features count:", data.features?.length);
+    
+    await db.siteHomePage.upsert({
+      where: { id: "singleton" },
+      create: { id: "singleton", ...data },
+      update: data,
+    });
+    console.log("CMS ACTION: Upsert Home Page database success!");
+    revalidatePath("/");
+    console.log("CMS ACTION: Path '/' revalidated");
+    return { success: true };
+  } catch (error: any) {
+    console.error("CMS ACTION ERROR: Update home page error:", error);
+    return { error: error.message || "Failed to update home page" };
+  }
+}
+
+// ─── CMS: About Page ─────────────────────────────────────────────────────────
+
+export async function updateAboutPage(data: {
+  heroHeadline: string;
+  heroSubtext: string;
+  missionTitle: string;
+  missionPara1: string;
+  missionPara2: string;
+  brandName: string;
+  foundedYear: string;
+  brandQuote: string;
+  stats: any;
+  valuesHeadline: string;
+  valuesSubtext: string;
+  values: any;
+}) {
+  try {
+    console.log("CMS ACTION: updateAboutPage entry");
+    const admin = await checkAdmin();
+    console.log("CMS ACTION: Admin authorized:", admin.email);
+    
+    await db.siteAboutPage.upsert({
+      where: { id: "singleton" },
+      create: { id: "singleton", ...data },
+      update: data,
+    });
+    console.log("CMS ACTION: Upsert About Page database success!");
+    revalidatePath("/about");
+    console.log("CMS ACTION: Path '/about' revalidated");
+    return { success: true };
+  } catch (error: any) {
+    console.error("CMS ACTION ERROR: Update about page error:", error);
+    return { error: error.message || "Failed to update about page" };
+  }
+}
+
+// ─── CMS: Contact Page ───────────────────────────────────────────────────────
+
+export async function updateContactPage(data: {
+  pageHeading: string;
+  pageSubtext: string;
+  email: string;
+  emailResponseTime: string;
+  phone: string;
+  phoneHours: string;
+  workingHours: string;
+  workingHoursTime: string;
+  address: string;
+  mapEmbedUrl: string;
+  successMessage: string;
+  mapSectionTitle: string;
+  mapSectionDesc: string;
+}) {
+  try {
+    console.log("CMS ACTION: updateContactPage entry");
+    const admin = await checkAdmin();
+    console.log("CMS ACTION: Admin authorized:", admin.email);
+
+    await db.siteContactPage.upsert({
+      where: { id: "singleton" },
+      create: { id: "singleton", ...data },
+      update: data,
+    });
+    console.log("CMS ACTION: Upsert Contact Page database success!");
+    revalidatePath("/contact");
+    console.log("CMS ACTION: Path '/contact' revalidated");
+    return { success: true };
+  } catch (error: any) {
+    console.error("CMS ACTION ERROR: Update contact page error:", error);
+    return { error: error.message || "Failed to update contact page" };
+  }
+}
+
+// ─── Contact Submissions ──────────────────────────────────────────────────────
+
+export async function updateContactSubmissionStatus(
+  id: string,
+  status: "UNREAD" | "READ" | "REPLIED"
+) {
+  try {
+    await checkAdmin();
+    await db.contactSubmission.update({ where: { id }, data: { status } });
+    revalidatePath("/admin/cms");
+    return { success: true };
+  } catch (error: any) {
+    console.error("Update submission status error:", error);
+    return { error: error.message || "Failed to update status" };
+  }
+}
+
+export async function deleteContactSubmission(id: string) {
+  try {
+    await checkAdmin();
+    await db.contactSubmission.delete({ where: { id } });
+    revalidatePath("/admin/cms");
+    return { success: true };
+  } catch (error: any) {
+    console.error("Delete submission error:", error);
+    return { error: error.message || "Failed to delete submission" };
+  }
+}
+

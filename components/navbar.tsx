@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LogOut, Menu, X, ShieldAlert, GraduationCap,
-  LayoutDashboard, Settings, FileCheck, BookOpen,
+  LayoutDashboard, Settings, FileCheck, BookOpen, FileText,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -43,6 +43,7 @@ export function Navbar() {
         { name: "Dashboard", href: "/admin",              icon: LayoutDashboard },
         { name: "Teachers",  href: "/admin/teachers",     icon: GraduationCap },
         { name: "Approvals", href: "/admin/approvals",    icon: FileCheck },
+        { name: "CMS",       href: "/admin/cms",          icon: FileText },
         { name: "Settings",  href: "/admin/settings",     icon: Settings },
       );
     } else if (role === "TEACHER") {
