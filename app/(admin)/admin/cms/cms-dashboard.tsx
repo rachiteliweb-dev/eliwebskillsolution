@@ -7,7 +7,11 @@ import HomeForm from "./home-form";
 import AboutForm from "./about-form";
 import ContactPageForm from "./contact-page-form";
 import SubmissionsPanel from "./submissions";
-import type { SiteHomePage, SiteAboutPage, SiteContactPage, ContactSubmission } from "@prisma/client";
+// Removed Prisma client type import to avoid build-time cache synchronization issues
+type SiteHomePage = any;
+type SiteAboutPage = any;
+type SiteContactPage = any;
+type ContactSubmission = any;
 
 interface Props {
   homePage:     SiteHomePage | null;

@@ -6,7 +6,9 @@ import { updateContactSubmissionStatus, deleteContactSubmission } from "@/lib/ac
 import {
   Check, Trash2, Mail, Phone, Calendar, Clock, AlertCircle, Eye, Loader2, RefreshCw
 } from "lucide-react";
-import type { ContactSubmission, ContactSubmissionStatus } from "@prisma/client";
+// Removed Prisma client type import to avoid build-time cache synchronization issues
+type ContactSubmissionStatus = "UNREAD" | "READ" | "REPLIED";
+type ContactSubmission = any;
 
 interface Props {
   submissions: ContactSubmission[];

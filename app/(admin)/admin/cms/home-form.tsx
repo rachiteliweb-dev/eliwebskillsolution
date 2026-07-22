@@ -7,7 +7,8 @@ import {
   Check, AlertCircle, Loader2, Plus, Trash2, ChevronDown, ChevronUp,
   Home, Type, BarChart3, HelpCircle, Users, Zap, Star, MessageSquare, Megaphone
 } from "lucide-react";
-import type { SiteHomePage } from "@prisma/client";
+// Removed Prisma client type import to avoid build-time cache synchronization issues
+type SiteHomePage = any;
 
 /* ─── Default data ─────────────────────────────────────────────────────────── */
 const DEFAULT_TRACKS = [
