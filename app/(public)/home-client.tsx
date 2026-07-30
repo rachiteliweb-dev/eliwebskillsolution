@@ -466,8 +466,8 @@ export default function HomePageClient({ data }: { data: HomeData }) {
                   </Link>
                 </div>
               </div>
-              <div className="hidden lg:flex lg:col-span-2 items-center justify-center" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
-                <div className="relative w-full max-w-[360px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 hover:scale-105 transition-transform duration-500">
+              <div className="hidden lg:flex lg:col-span-2 items-center justify-center relative z-20">
+                <div className="relative w-full max-w-[360px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-white/5 hover:scale-105 transition-transform duration-500">
                   <video src="/readytobuild.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} className="w-full h-full object-cover" />
                 </div>
               </div>
