@@ -55,7 +55,7 @@ export default function TermsOfServicePage() {
             <div className="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm space-y-4">
               <h2 className="text-xl font-bold font-heading text-[var(--foreground)]">3. Course Enrollment and Access</h2>
               <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                When you enroll in a course, you get a license from us to view it via the EliWeb Skill Solution platform and no other use. You may not download, record, distribute, or share the content in any way. 
+                When you enroll in a course, you get a license from us to view it via the EliWeb Skill Solution platform and no other use. You may not download, record, distribute, or share the content in any way.
               </p>
               <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
                 Most courses offer lifetime access, meaning you will have access to the course content as long as the platform exists and you retain your account in good standing. We reserve the right to revoke any license to access and use courses at any point in time in the event where we decide or are obligated to disable access to a course due to legal or policy reasons.
@@ -107,8 +107,8 @@ export default function TermsOfServicePage() {
               </p>
               <div className="text-sm text-[var(--muted-foreground)] space-y-1">
                 <p><strong>EliWeb Skill Solution</strong> (a subsidiary of EliWeb.in)</p>
-                <p>Email: <strong>support@eliweb.in</strong></p>
-                <p>Phone: <strong>+91 98765 43210</strong></p>
+                <p>Email: <strong>eliweb.in@gmail.com</strong></p>
+                <p>Phone: <strong>+91 7973851691</strong></p>
                 <p>Address: Pune, Maharashtra, India</p>
               </div>
             </div>
