@@ -466,7 +466,7 @@ export default function HomePageClient({ data }: { data: HomeData }) {
                   </Link>
                 </div>
               </div>
-              <div className="hidden lg:flex lg:col-span-2 items-center justify-center relative z-20">
+              <div className="lg:col-span-2 relative z-20 w-full mt-8 lg:mt-0">
                 <div className="relative z-10 w-full aspect-video rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.2)] overflow-hidden">
                   <video src="/readytobuild.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} className="w-full h-full object-cover" />
                 </div>
