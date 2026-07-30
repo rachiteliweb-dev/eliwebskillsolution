@@ -29,7 +29,7 @@ const DEFAULT_WHY_ITEMS = [
 ];
 
 const DEFAULT_STATS = [
-  { id: "1", value: "2,400+", label: "Students Enrolled",  iconKey: "Users" },
+  { id: "1", value: "1000+", label: "Students Enrolled",  iconKey: "Users" },
   { id: "2", value: "45+",    label: "Expert Courses",     iconKey: "BookOpen" },
   { id: "3", value: "40+",    label: "Global Instructors", iconKey: "GraduationCap" },
   { id: "4", value: "96%",    label: "Satisfaction Rate",  iconKey: "Trophy" },
@@ -66,7 +66,7 @@ export default async function HomePage() {
     heroSubtext:          raw?.heroSubtext           ?? "Expert-led courses in web development, digital marketing, design & more. Preview free lessons, enroll easily, and learn at your own pace.",
     heroCta1Label:        raw?.heroCta1Label         ?? "Explore Courses",
     heroCta2Label:        raw?.heroCta2Label         ?? "Start for Free",
-    heroSocialProofCount: raw?.heroSocialProofCount  ?? "2,400+",
+    heroSocialProofCount: raw?.heroSocialProofCount  ?? "1000+",
     tracksHeadline:       raw?.tracksHeadline        ?? "Everything You Need to Dominate Online",
     tracksSubtext:        raw?.tracksSubtext         ?? "Discover industry-relevant courses created by experts and designed to help you learn, grow, and achieve more.",
     features:             (raw?.features && (raw.features as any[]).length > 0) ? (raw.features as unknown[]) : DEFAULT_FEATURES,
@@ -83,7 +83,7 @@ export default async function HomePage() {
     faqHeadline:          raw?.faqHeadline           ?? "Common Questions",
     faqs:                 (raw?.faqs && (raw.faqs as any[]).length > 0) ? (raw.faqs as unknown[]) : DEFAULT_FAQS,
     ctaHeadline:          raw?.ctaHeadline           ?? "Ready to Build Your Dream Career?",
-    ctaSubtext:           raw?.ctaSubtext            ?? "Join 2,400+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
+    ctaSubtext:           raw?.ctaSubtext            ?? "Join 1000+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
     ctaBtn1Label:         raw?.ctaBtn1Label          ?? "Browse All Courses",
     ctaBtn2Label:         raw?.ctaBtn2Label          ?? "Create Free Account",
   };

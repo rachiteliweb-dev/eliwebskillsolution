@@ -126,9 +126,7 @@ function AnimatedHeroVisual() {
     <div className="relative w-full max-w-2xl mx-auto mt-8 lg:mt-0 flex flex-col items-center gap-6 sm:gap-8">
       <div className="relative w-full">
         <div className="relative z-10 w-full aspect-video rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-sm shadow-[0_0_50px_rgba(139,92,246,0.2)] overflow-hidden">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="https://video-previews.elements.envatousercontent.com/h264-video-previews/22f452d2-3653-4ac3-9efd-263fcdc98ba1/20188441.mp4" type="video/mp4" />
-          </video>
+          <video src="/herovideo.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} className="w-full h-full object-cover" />
         </div>
       </div>
       <div className="w-full overflow-hidden z-20" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
@@ -211,7 +209,7 @@ export default function HomePageClient({ data }: { data: HomeData }) {
               </h1>
               <p className="text-lg text-[var(--muted-foreground)] leading-relaxed max-w-xl">{data.heroSubtext}</p>
               <div className="flex flex-wrap gap-4 items-center">
-                <Link href="/courses" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-gradient text-[var(--primary-foreground)] font-bold text-sm shadow-glow hover:scale-105 transition-all duration-300">
+                <Link href="/courses" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-glow hover:scale-105 transition-all duration-300">
                   {data.heroCta1Label} <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/register" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-black/20 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[var(--foreground)] font-bold text-sm hover:bg-black/10 dark:bg-white/10 hover:border-black/40 dark:border-white/40 transition-all duration-300 backdrop-blur-md">
@@ -469,7 +467,9 @@ export default function HomePageClient({ data }: { data: HomeData }) {
                 </div>
               </div>
               <div className="hidden lg:flex lg:col-span-2 items-center justify-center" data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties}>
-                <Image src="/graduation-cap.png" alt="Graduation cap on books" width={320} height={320} className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" unoptimized />
+                <div className="relative w-full max-w-[360px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 hover:scale-105 transition-transform duration-500">
+                  <video src="/readytobuild.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} className="w-full h-auto object-cover" />
+                </div>
               </div>
             </div>
           </div>

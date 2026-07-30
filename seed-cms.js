@@ -25,7 +25,7 @@ const DEFAULT_WHY_ITEMS = [
 ];
 
 const DEFAULT_STATS = [
-  { id: "1", value: "2,400+", label: "Students Enrolled",  iconKey: "Users" },
+  { id: "1", value: "1000+", label: "Students Enrolled",  iconKey: "Users" },
   { id: "2", value: "45+",    label: "Expert Courses",     iconKey: "BookOpen" },
   { id: "3", value: "40+",    label: "Global Instructors", iconKey: "GraduationCap" },
   { id: "4", value: "96%",    label: "Satisfaction Rate",  iconKey: "Trophy" },
@@ -52,7 +52,7 @@ const DEFAULT_FAQS = [
 ];
 
 const DEFAULT_ABOUT_STATS = [
-  { id: "1", label: "Active Enrolled Students",  value: "2,400+", iconKey: "Users",    color: "text-blue-500" },
+  { id: "1", label: "Active Enrolled Students",  value: "1000+", iconKey: "Users",    color: "text-blue-500" },
   { id: "2", label: "Expert-Led Courses",         value: "85+",    iconKey: "BookOpen", color: "text-emerald-500" },
   { id: "3", label: "Student Satisfaction Rate",  value: "96%",    iconKey: "Star",     color: "text-amber-500" },
   { id: "4", label: "Global Industry Instructors",value: "40+",    iconKey: "Users",    color: "text-purple-500" },
@@ -80,7 +80,7 @@ async function seedCMS() {
       heroSubtext: "Expert-led courses in web development, digital marketing, design & more. Preview free lessons, enroll easily, and learn at your own pace.",
       heroCta1Label: "Explore Courses",
       heroCta2Label: "Start for Free",
-      heroSocialProofCount: "2,400+",
+      heroSocialProofCount: "1000+",
       tracksHeadline: "Everything You Need to Dominate Online",
       tracksSubtext: "Discover industry-relevant courses created by experts and designed to help you learn, grow, and achieve more.",
       features: DEFAULT_FEATURES,
@@ -97,7 +97,7 @@ async function seedCMS() {
       faqHeadline: "Common Questions",
       faqs: DEFAULT_FAQS,
       ctaHeadline: "Ready to Build Your Dream Career?",
-      ctaSubtext: "Join 2,400+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
+      ctaSubtext: "Join 1000+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
       ctaBtn1Label: "Browse All Courses",
       ctaBtn2Label: "Create Free Account",
     },
@@ -109,7 +109,7 @@ async function seedCMS() {
       heroSubtext: "Expert-led courses in web development, digital marketing, design & more. Preview free lessons, enroll easily, and learn at your own pace.",
       heroCta1Label: "Explore Courses",
       heroCta2Label: "Start for Free",
-      heroSocialProofCount: "2,400+",
+      heroSocialProofCount: "1000+",
       tracksHeadline: "Everything You Need to Dominate Online",
       tracksSubtext: "Discover industry-relevant courses created by experts and designed to help you learn, grow, and achieve more.",
       features: DEFAULT_FEATURES,
@@ -126,7 +126,7 @@ async function seedCMS() {
       faqHeadline: "Common Questions",
       faqs: DEFAULT_FAQS,
       ctaHeadline: "Ready to Build Your Dream Career?",
-      ctaSubtext: "Join 2,400+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
+      ctaSubtext: "Join 1000+ students who are already transforming their careers with EliWeb Skill Solution. Start with a free preview — no payment required.",
       ctaBtn1Label: "Browse All Courses",
       ctaBtn2Label: "Create Free Account",
     }
