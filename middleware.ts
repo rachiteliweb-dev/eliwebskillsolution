@@ -23,7 +23,7 @@ export async function middleware(req: NextRequest) {
     pathname === "/register" ||
     pathname.startsWith("/api/auth") ||
     pathname.startsWith("/api/uploadthing") ||
-    /\.(png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|json)$/i.test(pathname);
+    /\.(png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|json|mp4|webm)$/i.test(pathname);
 
   // If no session exists
   if (!token) {
