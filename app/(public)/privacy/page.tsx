@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
                 <li className="flex gap-2"><span className="text-blue-500 font-bold">•</span> <strong>Opt-out:</strong> Unsubscribe from marketing communications at any time.</li>
               </ul>
               <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                To exercise any of these rights, please contact us at <strong>support@eliweb.in</strong>.
+                To exercise any of these rights, please contact us at <strong>eliweb.in@gmail.com</strong>.
               </p>
             </div>
 
@@ -145,8 +145,8 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="text-sm text-[var(--muted-foreground)] space-y-1">
                 <p><strong>EliWeb Skill Solution</strong> (a subsidiary of EliWeb.in)</p>
-                <p>Email: <strong>support@eliweb.in</strong></p>
-                <p>Phone: <strong>+91 98765 43210</strong></p>
+                <p>Email: <strong>eliweb.in@gmail.com</strong></p>
+                <p>Phone: <strong>+91 7973851691</strong></p>
                 <p>Address: Pune, Maharashtra, India</p>
               </div>
             </div>

@@ -83,7 +83,7 @@ export default function RefundPolicyPage() {
                 To initiate a refund request, please follow these steps:
               </p>
               <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
-                <li className="flex gap-2"><span className="text-blue-500 font-bold">1.</span> Send an email to <strong>support@eliweb.in</strong> from the email address associated with your account.</li>
+                <li className="flex gap-2"><span className="text-blue-500 font-bold">1.</span> Send an email to <strong>eliweb.in@gmail.com</strong> from the email address associated with your account.</li>
                 <li className="flex gap-2"><span className="text-blue-500 font-bold">2.</span> Include "Refund Request - [Course Name]" in the subject line.</li>
                 <li className="flex gap-2"><span className="text-blue-500 font-bold">3.</span> Provide your full name, the email address used for the purchase, the transaction ID (if available), and a brief reason for requesting the refund to help us improve our courses.</li>
               </ul>
@@ -110,7 +110,7 @@ export default function RefundPolicyPage() {
               </p>
               <div className="text-sm text-[var(--muted-foreground)] space-y-1">
                 <p><strong>EliWeb Skill Solution</strong> (a subsidiary of EliWeb.in)</p>
-                <p>Email: <strong>support@eliweb.in</strong></p>
+                <p>Email: <strong>eliweb.in@gmail.com</strong></p>
               </div>
             </div>
 

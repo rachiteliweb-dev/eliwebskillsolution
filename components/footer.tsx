@@ -35,11 +35,11 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-5">Platform</h4>
             <ul className="space-y-3">
               {[
-                { name: "All Courses",  href: "/courses" },
-                { name: "About Us",     href: "/about" },
-                { name: "Contact Us",   href: "/contact" },
-                { name: "Login",        href: "/login" },
-                { name: "Register",     href: "/register" },
+                { name: "All Courses", href: "/courses" },
+                { name: "About Us", href: "/about" },
+                { name: "Contact Us", href: "/contact" },
+                { name: "Login", href: "/login" },
+                { name: "Register", href: "/register" },
               ].map((l) => (
                 <li key={l.name}>
                   <Link href={l.href} className="footer-link text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
@@ -54,7 +54,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-5">Skill Tracks</h4>
             <ul className="space-y-3">
-              {["Web Development","Digital Marketing","UI/UX Design","Data Science"].map((t) => (
+              {["Web Development", "Digital Marketing", "UI/UX Design", "Data Science"].map((t) => (
                 <li key={t}>
                   <Link href="/courses" className="footer-link text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">
                     {t}
@@ -68,8 +68,8 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--primary)] mb-5">Contact</h4>
             <ul className="space-y-3 text-sm text-[var(--muted-foreground)]">
-              <li className="hover:text-[var(--foreground)] transition-colors cursor-pointer">support@eliweb.in</li>
-              <li className="hover:text-[var(--foreground)] transition-colors cursor-pointer">+91 98765 43210</li>
+              <li className="hover:text-[var(--foreground)] transition-colors cursor-pointer">eliweb.in@gmail.com</li>
+              <li className="hover:text-[var(--foreground)] transition-colors cursor-pointer">+91 7973851691</li>
               <li>Mon–Sat, 9am–6pm IST</li>
             </ul>
           </div>

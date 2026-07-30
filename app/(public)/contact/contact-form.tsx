@@ -19,13 +19,13 @@ interface ContactInfo {
 }
 
 export default function ContactForm({ info }: { info: ContactInfo }) {
-  const [name, setName]       = useState("");
-  const [email, setEmail]     = useState("");
-  const [phone, setPhone]     = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [track, setTrack]     = useState("Web Development");
-  const [status, setStatus]   = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [track, setTrack] = useState("Web Development");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -131,7 +131,7 @@ export default function ContactForm({ info }: { info: ContactInfo }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="cf-phone" className="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Phone Number</label>
-              <input type="tel" id="cf-phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)] text-[var(--foreground)] text-sm font-medium focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)] transition-all" />
+              <input type="tel" id="cf-phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 7973851691" className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--secondary)] text-[var(--foreground)] text-sm font-medium focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)] transition-all" />
             </div>
             <div className="space-y-2">
               <label htmlFor="cf-track" className="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Skill Track of Interest</label>
